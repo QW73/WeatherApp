@@ -115,8 +115,5 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
                 viewModel.updateFavoriteState()
             }
         }
-        binding.ivFavorites.setOnClickListener {
-            viewModel.updateFavoriteState()
-        }
     }
 }

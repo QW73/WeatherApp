@@ -16,13 +16,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
-
-private const val DEFAULT_HOUR = 5
-private const val DEFAULT_MINUTE = 0
-
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
-    private val repository: MainRepo
+    private val repository: MainRepo,
 ) :
     BaseViewModel<WeatherEvent>(), OnSuccessListener<Location?>,
     SwipeRefreshLayout.OnRefreshListener {
@@ -35,7 +31,6 @@ class WeatherViewModel @Inject constructor(
 
 
     init {
-        getLastKnownLocation()
         checkCurrentLocation()
     }
 
