@@ -29,7 +29,7 @@ class ApiHelperImpl @Inject constructor(private val apiService: ApiService) : Ap
         apiService.searchCity(
             mapOf(
                 QUERY_CITY to city,
-                QUERY_LIMIT to "7",
+                QUERY_LIMIT to "5",
                 QUERY_APP_ID to API_KEY
             )
         )

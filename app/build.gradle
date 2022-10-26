@@ -5,7 +5,6 @@ plugins {
     id 'com.google.dagger.hilt.android'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs'
-    id 'kotlin-parcelize'
 }
 
 android {

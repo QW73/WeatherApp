@@ -93,9 +93,9 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding, WeatherEvent>() {
                 isFavorite.flowWithLifecycle(lifecycle)
                     .collect {
                         val favoriteResId = if (it)
-                            R.drawable.ic_nav_favorite_24dp
-                        else
                             R.drawable.ic_heart_27dp
+                        else
+                            R.drawable.ic_heart_24dp
                         binding.ivFavorites.setImageResource(favoriteResId)
                     }
             }
@@ -124,7 +124,6 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding, WeatherEvent>() {
             header.visibility = View.VISIBLE
             tDay.text = first.weekDay
             tDate.text = first.date
-            tDescription.text = first.description
             tDegree.text = getString(degreeUnitResId, first.temperature)
             Glide.with(requireContext())
                 .load(first.iconUrl)

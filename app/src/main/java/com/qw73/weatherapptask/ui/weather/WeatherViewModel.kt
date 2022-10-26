@@ -17,6 +17,9 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 
+private const val DEFAULT_HOUR = 5
+private const val DEFAULT_MINUTE = 0
+
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val repository: MainRepo
@@ -30,6 +33,19 @@ class WeatherViewModel @Inject constructor(
     private val _isFavorite: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val isFavorite: StateFlow<Boolean> = _isFavorite
 
+
+    init {
+        getLastKnownLocation()
+        checkCurrentLocation()
+    }
+
+    private fun getLastKnownLocation() {
+        launchCoroutine {
+            repository.getLastKnownLocationForecast().collect {
+                _currentForecast.emit(it)
+            }
+        }
+    }
 
     @VisibleForTesting
     internal fun getData(coord: Coord) {

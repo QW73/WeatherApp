@@ -8,8 +8,8 @@
     <string name="permission_denied_explanation">Location permission is needed to get your location.</string>
     <string name="no_location_detected">No location detected. Make sure location is enabled on the device.</string>
     <string name="weather_icon">Weather icon</string>
-    <string name="temperature_c">%1</string>
-    <string name="temperature_f">%1</string>
+    <string name="temperature_c">%1$s°</string>
+    <string name="temperature_f">%1$s°</string>
     <string name="degree_c">Celsius</string>
     <string name="degree_f">Fahrenheit</string>
     <string name="wind_speed">Wind Speed</string>
