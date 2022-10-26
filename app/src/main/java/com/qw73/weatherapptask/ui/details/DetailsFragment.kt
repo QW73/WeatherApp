@@ -1,5 +1,6 @@
 package com.qw73.weatherapptask.ui.details
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import com.qw73.weatherapptask.data.model.DegreeUnit
 import com.qw73.weatherapptask.data.model.toCityResponse
 import com.qw73.weatherapptask.databinding.FragmentDetailsBinding
 import com.qw73.weatherapptask.ui.base.BaseFragment
+import com.qw73.weatherapptask.ui.weather.DayAdapter
 import com.qw73.weatherapptask.util.extensions.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -24,11 +26,17 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
 
     override val viewModel by viewModels<DetailsViewModel>()
     private val navigationArgs: DetailsFragmentArgs by navArgs()
+    private lateinit var adapter: DayAdapter
 
     override fun getViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentDetailsBinding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        adapter = DayAdapter()
+    }
 
     override fun handleEvent(event: DetailsEvent) {
         when (event) {
@@ -40,10 +48,21 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
         super.observeData()
         with(viewModel) {
             viewLifecycleOwner.lifecycleScope.launch {
-                todayWeather.flowWithLifecycle(lifecycle)
+                isLoading.flowWithLifecycle(lifecycle)
+                    .collect {
+                        binding.progressBar.visibility = when (it) {
+                            true -> View.VISIBLE
+                            false -> View.GONE
+                        }
+                    }
+
+            }
+
+            viewLifecycleOwner.lifecycleScope.launch {
+                currentForecast.flowWithLifecycle(lifecycle)
                     .collect {
                         it?.let {
-                            bindDay(it.weatherDay)
+                            renderDays(it.weatherDays)
                             binding.tIty.text = it.toCityResponse().name
                         }
                     }
@@ -62,18 +81,25 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
         }
     }
 
-    private fun bindDay(dayWeather: DayWeather) {
+    private fun renderDays(dayWeathers: List<DayWeather>) {
+        adapter.submitList(dayWeathers)
+        if (dayWeathers.isNotEmpty())
+            bindFirstDay(dayWeathers.first())
+    }
+
+    private fun bindFirstDay(first: DayWeather) {
+        val degreeUnitResId = when (first.unit) {
+            DegreeUnit.CELSIUS -> R.string.temperature_c
+            DegreeUnit.FAHRENHEIT -> R.string.temperature_f
+        }
+
         with(binding) {
-            val degreeUnitResId = when (dayWeather.unit) {
-                DegreeUnit.CELSIUS -> R.string.temperature_c
-                DegreeUnit.FAHRENHEIT -> R.string.temperature_f
-            }
             header.visibility = View.VISIBLE
-            tDay.text = dayWeather.weekDay
-            tDate.text = dayWeather.date
-            tDegree.text = getString(degreeUnitResId, dayWeather.temperature)
+            tDay.text = first.weekDay
+            tDate.text = first.date
+            tDegree.text = getString(degreeUnitResId, first.temperature)
             Glide.with(requireContext())
-                .load(dayWeather.iconUrl)
+                .load(first.iconUrl)
                 .into(ivWeather)
         }
     }
@@ -82,7 +108,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
         val latitude = navigationArgs.latitude.toDouble()
         val longitude = navigationArgs.longitude.toDouble()
 
-        viewModel.getDayWeatherDetails(latitude, longitude)
+        viewModel.getDetailsData(latitude, longitude)
+        with(binding) {
+            recyclerViewWords.adapter = adapter
+            ivFavorites.setOnClickListener {
+                viewModel.updateFavoriteState()
+            }
+        }
         binding.ivFavorites.setOnClickListener {
             viewModel.updateFavoriteState()
         }

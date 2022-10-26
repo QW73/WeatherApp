@@ -23,15 +23,4 @@ interface ApiService {
     ): Response<WeeklyForecastResponse>
 }
 
-/*
- @Query("q") q: String,
-        @Query("limit") limit: Int = 5,
-        @Query("appid") appid: String,
 
- @Query("exclude") exclude: String = "minutely,alerts",
-@Query("lon") lon: String,
-@Query("lat") lat: String,
-@Query("lang") lang: String = "ru",
-@Query("units") units: String = "metric",
-@Query("APPID") app_id: String = API_KEY,
-*/

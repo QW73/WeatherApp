@@ -1,8 +1,9 @@
 package com.qw73.weatherapptask.ui.details
 
 
+import androidx.annotation.VisibleForTesting
 import com.qw73.weatherapptask.data.Repo.MainRepo
-import com.qw73.weatherapptask.data.model.TodayForecast
+import com.qw73.weatherapptask.data.model.WeekForecast
 import com.qw73.weatherapptask.data.model.toCityResponse
 import com.qw73.weatherapptask.ui.base.BaseViewModel
 import com.qw73.weatherapptask.util.DataResult
@@ -15,28 +16,33 @@ import javax.inject.Inject
 class DetailsViewModel @Inject constructor(private val repository: MainRepo) :
     BaseViewModel<DetailsEvent>() {
 
-    private val _todayWeather: MutableStateFlow<TodayForecast?> = MutableStateFlow(null)
-    val todayWeather: StateFlow<TodayForecast?> = _todayWeather
+    private val _currentForecast: MutableStateFlow<WeekForecast?> = MutableStateFlow(null)
+    val currentForecast: StateFlow<WeekForecast?> = _currentForecast
 
     private val _isFavorite: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val isFavorite: StateFlow<Boolean> = _isFavorite
 
-    fun getDayWeatherDetails(latitude: Double, longitude: Double) {
+    @VisibleForTesting
+    internal fun getDetailsData(lat: Double, lon: Double) {
         startLoading()
         launchCoroutine {
             handleResult(
-                repository.getTodayForecast(latitude, longitude)
+                repository.getWeekForecast(
+                    latitude = lat,
+                    longitude = lon
+                )
             )
         }
     }
 
-    private fun handleResult(result: DataResult<TodayForecast>) {
+
+    private fun handleResult(result: DataResult<WeekForecast>) {
         when (result) {
             is DataResult.Failure -> result.cause.localizedMessage?.let {
                 sendEvent(DetailsEvent.ErrorGettingDetailsEvent(it))
             }
             is DataResult.Success -> with(result.value) {
-                _todayWeather.value = this
+                _currentForecast.value = this
                 checkIsFavorite(this.cityId)
             }
         }.also {
@@ -54,7 +60,7 @@ class DetailsViewModel @Inject constructor(private val repository: MainRepo) :
 
     fun updateFavoriteState() {
         launchCoroutine {
-            _todayWeather.value?.let {
+            _currentForecast.value?.let {
                 if (_isFavorite.value)
                     repository.removeCityFromFavorites(it.toCityResponse())
                 else
