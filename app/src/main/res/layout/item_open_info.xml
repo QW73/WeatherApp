@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="@id/tSpeed_title"
         app:layout_constraintStart_toStartOf="@id/tSpeed_title"
         app:layout_constraintTop_toBottomOf="@id/tSpeed_title"
-        tools:text="22.5 mph" />
+        tools:text="22.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

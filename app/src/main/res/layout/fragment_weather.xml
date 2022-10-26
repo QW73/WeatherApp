@@ -15,20 +15,20 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="50dp"
+            android:paddingBottom="24dp"
             android:visibility="gone"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible">
 
             <ImageView
                 android:id="@+id/ivFavorites"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="19dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="19dp"
                 android:contentDescription="@string/action_favorites"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tCity"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent="0.3"
                 tools:src="@drawable/ic_heart_27dp" />
@@ -37,12 +37,12 @@
                 android:id="@+id/tCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:textSize="35sp"
                 android:theme="@style/WeatherForecastStyle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivFavorites"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Moscow" />
 
             <TextView
@@ -85,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="52sp"
+                android:layout_marginTop="-4dp"
                 android:theme="@style/WeatherForecastStyle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -118,22 +119,26 @@
                 tools:text="rain" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/rv_weather_rounded_corner_and_fill"
+        app:layout_constraintTop_toBottomOf="@id/header">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_words"
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="24dp"
-            android:background="@drawable/rv_weather_rounded_corner_and_fill"
+            android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_weight="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header"
             tools:itemCount="10"
             tools:listitem="@layout/item_day" />
-
+    </androidx.appcompat.widget.LinearLayoutCompat>
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
