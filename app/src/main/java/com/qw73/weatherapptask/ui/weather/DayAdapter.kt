@@ -54,8 +54,8 @@ class DayAdapter :
             textDate.text = dayWeather.date
             textUnit.setText(
                 when (dayWeather.unit) {
-                    DegreeUnit.CELSIUS -> R.string.degree_
-                    DegreeUnit.FAHRENHEIT -> R.string.degree_
+                    DegreeUnit.CELSIUS-> R.string.degree_cel
+                    DegreeUnit.FAHRENHEIT -> R.string.degree_far
                 }
             )
         }
