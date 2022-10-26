@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/favorite-48px.xml" value="0.16" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/ic_heart_24dp.xml" value="0.1485" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/ic_heart_27dp.xml" value="0.1485" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/ic_nav_favorite_24dp.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/partly_cloudy_day-48px.xml" value="0.16" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/rounded_corner_and_fill.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/rv_weather_rounded_corner_and_fill.xml" value="0.1485" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/setting_buttons_rounded_corner_and_fill.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/drawable/underline.xml" value="0.1955" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/fragment_details.xml" value="0.24818840579710144" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/fragment_favorites.xml" value="0.24818840579710144" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/fragment_search.xml" value="0.2" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/fragment_settings.xml" value="0.264" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/fragment_weather.xml" value="0.264" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/item_closed_info.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/item_collapsed.xml" value="0.264" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/item_day.xml" value="0.264" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/item_expanded.xml" value="0.264" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/item_open_info.xml" value="0.4" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/layout/item_search.xml" value="0.2" />
+        <entry key="..\:/Users/Tvrma/WeatherAppTask/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">WeatherAppTask</string>
+    <string name="permission_rationale">To get your location, please allow Location permission</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="action_weather">Weather</string>
+    <string name="permission_denied_explanation">Location permission is needed to get your location.</string>
+    <string name="no_location_detected">No location detected. Make sure location is enabled on the device.</string>
+    <string name="weather_icon">Weather icon</string>
+    <string name="temperature_c">%1</string>
+    <string name="temperature_f">%1</string>
+    <string name="degree_c">Celsius</string>
+    <string name="degree_f">Fahrenheit</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="description">Description</string>
+    <string name="humidity">Humidity</string>
+    <string name="sunset">Sunset</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="temperature">Temperature</string>
+    <string name="no_favorites_found">No Favorites Found</string>
+    <string name="action_details">Details</string>
+    <string name="channel_name">Reminder Channel</string>
+    <string name="channel_description">Daily reminder for the weather</string>
+    <string name="notification_title">Remember to check the weather!</string>
+    <string name="notification_description">Logging your transactions daily can help you manage your finances better.</string>
+    <string name="degree_">°</string>
+    <string name="todo">TODO</string>
+</resources>

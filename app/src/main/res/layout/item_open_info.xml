@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root"
+    android:visibility="gone">
+
+    <View
+        android:id="@+id/separator_main"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tSunrise_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/sunrise"
+        android:layout_marginStart="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator_main"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tSunrise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintEnd_toEndOf="@id/tSunrise_title"
+        app:layout_constraintStart_toStartOf="@id/tSunrise_title"
+        app:layout_constraintTop_toBottomOf="@id/tSunrise_title"
+        tools:text="12:00 AM" />
+
+    <TextView
+        android:id="@+id/tSunset_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/sunset"
+        android:layout_marginStart="12dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tSunrise_title"
+        app:layout_constraintTop_toBottomOf="@id/separator_main"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tSunset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintEnd_toEndOf="@id/tSunset_title"
+        app:layout_constraintStart_toStartOf="@id/tSunset_title"
+        app:layout_constraintTop_toBottomOf="@id/tSunset_title"
+        tools:text="12:00 AM" />
+
+    <View
+        android:id="@+id/separator_secondary"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tSunrise" />
+
+    <TextView
+        android:id="@+id/tHumidity_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/humidity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator_secondary"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tHumidity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintEnd_toEndOf="@id/tHumidity_title"
+        app:layout_constraintStart_toStartOf="@id/tHumidity_title"
+        app:layout_constraintTop_toBottomOf="@id/tHumidity_title"
+        tools:text="35%" />
+
+    <TextView
+        android:id="@+id/tSpeed_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="12dp"
+        android:text="@string/wind_speed"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintStart_toEndOf="@id/tHumidity_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator_secondary"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:theme="@style/WeekForecastStyle"
+        app:layout_constraintEnd_toEndOf="@id/tSpeed_title"
+        app:layout_constraintStart_toStartOf="@id/tSpeed_title"
+        app:layout_constraintTop_toBottomOf="@id/tSpeed_title"
+        tools:text="22.5 mph" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
