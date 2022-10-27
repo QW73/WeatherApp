@@ -20,7 +20,7 @@
     <string name="sunrise">Sunrise</string>
     <string name="temperature">Temperature</string>
     <string name="no_favorites_found">No Favorites Found</string>
-    <string name="action_details">Details</string>
+    <string name="action_details">Remote weather</string>
     <string name="channel_name">Reminder Channel</string>
     <string name="channel_description">Daily reminder for the weather</string>
     <string name="notification_title">Remember to check the weather!</string>
