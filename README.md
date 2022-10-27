@@ -18,3 +18,5 @@ The basic Android weather application using MVVM
 * Room - Database
 * State FLow
 * Datastore
+
+![video_2022-10-27_17-25-43 (1)](https://user-images.githubusercontent.com/94110025/198323623-4e3be68b-6758-4b3c-8138-05eb8f064e86.gif)
