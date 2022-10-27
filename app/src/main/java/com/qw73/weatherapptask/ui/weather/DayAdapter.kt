@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.qw73.weatherapptask.R
 import com.qw73.weatherapptask.data.model.DayWeather
-import com.qw73.weatherapptask.data.model.DegreeUnit
 import com.qw73.weatherapptask.databinding.ItemClosedInfoBinding
 import com.qw73.weatherapptask.databinding.ItemDayBinding
 import com.qw73.weatherapptask.databinding.ItemOpenInfoBinding

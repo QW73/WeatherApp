@@ -1,7 +1,5 @@
 package com.qw73.weatherapptask.ui.settings
 
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
@@ -19,7 +17,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, NoEvent>() {
 
     override fun getViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentSettingsBinding =
         FragmentSettingsBinding.inflate(inflater, container, false)
 

@@ -40,7 +40,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchEvent>() {
 
     override fun getViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentSearchBinding =
         FragmentSearchBinding.inflate(inflater, container, false)
 

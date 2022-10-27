@@ -32,9 +32,4 @@ class SearchViewModel @Inject constructor(private val repository: MainRepo) :
             }
         }
     }
-
-    fun onCityClicked(cityResponse: CityResponse) {
-        TODO("Not yet implemented")
-    }
-
 }

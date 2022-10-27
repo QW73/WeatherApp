@@ -11,7 +11,7 @@ import com.qw73.weatherapptask.data.api.ApiHelper
 import com.qw73.weatherapptask.data.api.ApiHelperImpl
 import com.qw73.weatherapptask.data.db.AppDB
 import com.qw73.weatherapptask.data.db.ForecastDao
-import com.qw73.weatherapptask.data.network.ApiService
+import com.qw73.weatherapptask.data.api.ApiService
 import com.qw73.weatherapptask.data.store.Settings
 import com.qw73.weatherapptask.data.store.SettingsImpl
 import com.qw73.weatherapptask.util.BASE_URL

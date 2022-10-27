@@ -10,7 +10,7 @@ import com.qw73.weatherapptask.data.model.getFullName
 import com.qw73.weatherapptask.databinding.ItemSearchBinding
 
 class CityAdapter(private val onItemClicked: (CityResponse) -> Unit = {}) :
-ListAdapter<CityResponse, CityAdapter.ViewHolder>(DiffCallback) {
+    ListAdapter<CityResponse, CityAdapter.ViewHolder>(DiffCallback) {
 
     class ViewHolder(private var binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -25,7 +25,7 @@ ListAdapter<CityResponse, CityAdapter.ViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
-        viewType: Int
+        viewType: Int,
     ): ViewHolder =
 
         ViewHolder(
@@ -42,12 +42,12 @@ ListAdapter<CityResponse, CityAdapter.ViewHolder>(DiffCallback) {
     companion object DiffCallback : DiffUtil.ItemCallback<CityResponse>() {
         override fun areItemsTheSame(
             oldItem: CityResponse,
-            newItem: CityResponse
+            newItem: CityResponse,
         ): Boolean = oldItem.name == newItem.name
 
         override fun areContentsTheSame(
             oldItem: CityResponse,
-            newItem: CityResponse
+            newItem: CityResponse,
         ): Boolean = oldItem.name == newItem.name
     }
 }

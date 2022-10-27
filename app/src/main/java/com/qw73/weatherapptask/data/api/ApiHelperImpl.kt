@@ -2,7 +2,6 @@ package com.qw73.weatherapptask.data.api
 
 import com.qw73.weatherapptask.data.model.CityResponse
 import com.qw73.weatherapptask.data.model.WeeklyForecastResponse
-import com.qw73.weatherapptask.data.network.ApiService
 import com.qw73.weatherapptask.util.API_KEY
 import com.qw73.weatherapptask.util.IMAGE_BASE_URL
 import retrofit2.Response

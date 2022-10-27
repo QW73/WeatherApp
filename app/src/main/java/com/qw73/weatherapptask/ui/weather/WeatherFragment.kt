@@ -14,6 +14,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.qw73.weatherapptask.R
 import com.qw73.weatherapptask.data.model.DayWeather
 import com.qw73.weatherapptask.data.model.DegreeUnit
@@ -22,9 +25,6 @@ import com.qw73.weatherapptask.databinding.FragmentWeatherBinding
 import com.qw73.weatherapptask.ui.base.BaseFragment
 import com.qw73.weatherapptask.util.extensions.showSnackbar
 import com.qw73.weatherapptask.util.extensions.showToast
-import com.bumptech.glide.Glide
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -40,7 +40,7 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding, WeatherEvent>() {
 
     override fun getViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentWeatherBinding =
         FragmentWeatherBinding.inflate(inflater, container, false)
 
@@ -124,6 +124,7 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding, WeatherEvent>() {
             header.visibility = View.VISIBLE
             tDay.text = first.weekDay
             tDate.text = first.date
+            tDescription.text = first.description
             tDegree.text = getString(degreeUnitResId, first.temperature)
             Glide.with(requireContext())
                 .load(first.iconUrl)

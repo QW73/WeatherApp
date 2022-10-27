@@ -52,7 +52,7 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding, FavoritesEvent>
 
     override fun getViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentFavoritesBinding =
         FragmentFavoritesBinding.inflate(inflater, container, false)
 

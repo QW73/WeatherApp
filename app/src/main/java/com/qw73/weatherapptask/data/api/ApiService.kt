@@ -1,4 +1,4 @@
-package com.qw73.weatherapptask.data.network
+package com.qw73.weatherapptask.data.api
 
 import com.qw73.weatherapptask.data.model.CityResponse
 import com.qw73.weatherapptask.data.model.WeeklyForecastResponse

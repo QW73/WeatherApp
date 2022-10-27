@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -97,6 +98,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
             header.visibility = View.VISIBLE
             tDay.text = first.weekDay
             tDate.text = first.date
+            tDescription.text = first.description
             tDegree.text = getString(degreeUnitResId, first.temperature)
             Glide.with(requireContext())
                 .load(first.iconUrl)
@@ -104,11 +106,12 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, DetailsEvent>() {
         }
     }
 
+    @VisibleForTesting
     override fun setupViews() {
         val latitude = navigationArgs.latitude.toDouble()
         val longitude = navigationArgs.longitude.toDouble()
-
         viewModel.getDetailsData(latitude, longitude)
+
         with(binding) {
             recyclerViewWords.adapter = adapter
             ivFavorites.setOnClickListener {
